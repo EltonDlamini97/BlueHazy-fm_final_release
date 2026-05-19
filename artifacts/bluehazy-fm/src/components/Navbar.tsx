@@ -2,8 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-
-const logoPath = "/images/logo.webp";
+import logoPath from "@assets/OIP_(1)_1778692461968.webp";
 
 export function Navbar() {
   const [location] = useLocation();

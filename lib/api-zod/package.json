@@ -1,12 +1,9 @@
 {
-  "name": "@workspace/api-zod",
+  "name": "@workspace/api-zod-removed",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "exports": {
-    ".": "./src/index.ts"
-  },
-  "dependencies": {
-    "zod": "catalog:"
+  "scripts": {
+    "typecheck": "echo \"api-zod removed\""
   }
 }

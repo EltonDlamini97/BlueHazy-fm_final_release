@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import { Layout } from "./components/Layout";
-import { setBaseUrl } from "@/lib/api-client";
+import { setBaseUrl } from "@workspace/api-client-react";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -19,12 +19,9 @@ import Admin from "./pages/Admin";
 import { AdminGate } from "./components/AdminGate";
 import { RadioPlayerProvider } from "./contexts/RadioPlayerContext";
 
-// In production the API is served from the same domain via Netlify Functions (/api/*)
-// Only set a base URL if explicitly overridden (e.g. for local dev pointing at a remote API)
-const apiUrl = import.meta.env.VITE_API_URL;
-if (apiUrl) {
-  setBaseUrl(apiUrl);
-}
+// Point API calls to the deployed API server in production
+const apiUrl = import.meta.env.VITE_API_URL ?? "https://bluehazy-fm-api.onrender.com";
+setBaseUrl(apiUrl);
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -58,10 +55,11 @@ function Router() {
 }
 
 function App() {
+  const base = (import.meta.env.BASE_URL ?? "/").replace(/\/$/, "");
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+        <WouterRouter base={base}>
           <Router />
         </WouterRouter>
         <Toaster />

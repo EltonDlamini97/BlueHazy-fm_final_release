@@ -1,4 +1,4 @@
-import { useListPosts } from "@/lib/api-client";
+import { useListPosts } from "@workspace/api-client-react";
 import { Link } from "wouter";
 import { Search, ArrowRight, Clock } from "lucide-react";
 import { useState } from "react";

@@ -1,7 +1,6 @@
 import { Link } from "wouter";
 import { SiFacebook, SiTiktok, SiInstagram, SiWhatsapp, SiYoutube, SiX } from "react-icons/si";
-
-const logoPath = "/images/logo.webp";
+import logoPath from "@assets/OIP_(1)_1778692461968.webp";
 
 export function Footer() {
   return (

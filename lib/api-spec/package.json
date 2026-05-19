@@ -1,11 +1,8 @@
 {
-  "name": "@workspace/api-spec",
+  "name": "@workspace/api-spec-removed",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "codegen": "orval --config ./orval.config.ts && pnpm -w run typecheck:libs"
-  },
-  "devDependencies": {
-    "orval": "^8.5.2"
+    "typecheck": "echo \"api-spec removed\""
   }
 }

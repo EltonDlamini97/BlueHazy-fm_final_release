@@ -1,4 +1,4 @@
-import { useSubmitContact } from "@/lib/api-client";
+import { useSubmitContact } from "@workspace/api-client-react";
 import { BarChart, Users, Zap, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
